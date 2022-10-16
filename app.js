@@ -16,6 +16,6 @@ app.get('/', (req, res) => {
 });
 
 //posting to database
-app.use('/api/v1/tour', tourRoute);
+app.use('https://acc-assignment-2-f8hq.onrender.com/api/v1/tour', tourRoute);
 
 module.exports = app;
