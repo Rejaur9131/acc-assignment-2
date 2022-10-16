@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 const mongodb = require('mongodb');
-const port = 'https://acc-assignmen-2.onrender.com/api/v1/tour';
+const dotenv = require('dotenv').config();
+const PORT = process.env.PORT || 5000;
 
 const app = require('./app');
 
 // database connection
-mongoose.connect('mongodb://localhost:27017/tours').then(() => {
+mongoose.connect(process.env.DATABASE_LOCAL).then(() => {
   console.log(`Database connection successfull`);
 });
 
-app.listen(port, () => {
-  console.log('App is listening on port 5000');
+app.listen(PORT, () => {
+  console.log(`App is listening on port ${PORT}`);
 });
